@@ -14,4 +14,8 @@ variable "admin_username" {
   default = "azureuser"
 }
 
- 
+variable "admin_password" {
+  description = "Linux VMSS admin password"
+  type        = string
+  sensitive   = true
+}
