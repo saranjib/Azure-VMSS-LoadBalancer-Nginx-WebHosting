@@ -6,11 +6,9 @@ resource "azurerm_linux_virtual_machine_scale_set" "vmss" {
   sku       = "Standard_B2s"
   instances = 2
 
-  admin_username = var.admin_username
-  admin_ssh_key {
-    username   = "adminuser"
-    public_key = local.first_public_key
-  }
+  admin_username                  = var.admin_username
+  admin_password                  = var.admin_password
+  disable_password_authentication = false
 
   upgrade_mode = "Automatic"
 
@@ -59,7 +57,7 @@ resource "azurerm_virtual_machine_scale_set_extension" "nginx" {
 
   protected_settings = jsonencode({
     script = base64encode(
-      file("")
+      file("${path.module}/../scripts/install-nginx.sh")
     )
   })
 }
