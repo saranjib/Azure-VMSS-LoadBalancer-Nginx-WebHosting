@@ -15,6 +15,9 @@ Terraform automates the provisioning of Azure infrastructure, while Custom Scrip
 - Bash Scripting
 - Azure Load Balancer
 - Azure VM Scale Sets
+- Azure Monitor
+
+
   
 
 ## Key Features
@@ -24,6 +27,9 @@ Terraform automates the provisioning of Azure infrastructure, while Custom Scrip
 3. Automatic Deployment: Nginx is installed automatically using Custom Script Extension.
 4. Autoscaling: VMSS scales between 2 and 5 instances based on CPU utilization.
 5. Infrastructure as Code: All infrastructure is provisioned using Terraform.
+6. Health Monitoring: Load Balancer health probes monitor backend instances.
+
+
 
 ## Commands used for authentication 
 
